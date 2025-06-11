@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Outfit, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
@@ -22,14 +22,104 @@ button {
   font-weight: 600;
   text-shadow: 0 0.0625em 0 #fff;
   box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
-    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
-    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+              0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+              0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
   transition: 0.15s ease;
   cursor: pointer;
 }
+
 button:active {
   translate: 0 0.225em;
   box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
-    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
-    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+              0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+              0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  background-color: white;
+  user-select: none;
+  margin-bottom: 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logovl {
+  width: 90px;
+  height: 90px;
+  margin-left: 7rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  padding: 0;
+  margin: 0;
+  margin-right: 10rem;
+}
+
+.carousel {
+  width: 100%; /* Ocupa toda a largura da tela */
+  height: 800px; /* Mantém a altura fixa */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  overflow: hidden;
+  position: relative;
+  /* Adiciona centralização vertical na página */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  margin-top: -12rem;
+}
+
+.carousel-image {
+  width: 100%; /* Ocupa toda a largura do contêiner */
+  height: 100%; /* Mantém a proporção com a altura do contêiner */
+  object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+/* SETAS ISOLADAS */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff; /* fundo branco sólido */
+  border-radius: 50%; /* formato circular */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* seta fina e pequena */
+  font-weight: 100;
+  color: #333333; /* seta escura */
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+
+#prev {
+  left: 15px;
+}
+
+#next {
+  right: 15px;
 }

@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site Básico de estelionato</title>
+  <title>Vida Leve</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logovl.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div class="nav-link">
-    <ul>
-      <li>Home</li>
-      <li>Serviços</li>
-      <li>Valores</li>
-      <li>Sobre nós</li>
-    </ul>
-  </div>
+ <header class="nav-container">
+  <img src="assets/logovl.png" alt="logovl" class="logovl">
+    <nav>
+      <ul class="nav-links">
+          <li>Home</li>
+          <li>Serviços</li>
+          <li>Valores</li>
+          <li>Sobre nós</li>
+      </ul>
+    </nav>
+  </header>
 
   <div class="apresentacao-home">
     <h2><b>Vida Leve</b></h2>
     <h3><b>Seu bem-estar começa aqui!</b>
       <br>
           Na Vida Leve Saúde, você agenda consultas médicas de forma rápida, segura e sem complicações. 
-          <br>
+      <br>
           Encontre especialistas de diversas áreas, escolha o melhor horário e tenha o cuidado que você merece, no seu tempo e do seu jeito.
           Estamos aqui para facilitar a sua saúde.</h3>
   </div>
@@ -31,14 +37,16 @@
     <button>Agende aqui</button>
   </div>
 
+  <div class="carousel">
+    <button id="prev" class="carousel-arrow">&#10094;</button>
+    <button id="next" class="carousel-arrow">&#10095;</button>
+    
+    <img src="assets/con1.jpeg" class="carousel-image active">
+    <img src="assets/con2.jpeg" class="carousel-image">
+    <img src="assets/con3.jpg" class="carousel-image">
 
-  <div class="img-medico">
-    <img src="assets/medio.png" alt="medico">
+    
   </div>
-
-
-
-
 
 
 
