@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "João Silva",
+        "senha": "123"
+    },
+    {
+        "nome": "Maria Oliveira",
+        "senha": "456"
+    },
+    {
+        "nome": "Ana Souza",
+        "senha": "789"
+    }
+]
