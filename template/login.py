@@ -18,7 +18,7 @@ def login():
     if nome == 'admin' and senha == '1234':
         return render_template('login.html')
     else:
-        flash_message('Usuário ou senha inválidos', 'error')
+        flash('Usuário ou senha inválidos', 'error')
         return redirect('/')
     
 if __name__ in '__main__':
