@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<! - nao apagar, é  uma menssagem do login -- >
+{% set menssagem = get_flashed_messages() %}
+{% if menssagem %}
+    <div class="flash_alert">
+       {{ menssagem[0] }}
+    </div>
+{% endif %}
