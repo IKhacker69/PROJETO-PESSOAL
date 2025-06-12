@@ -7,10 +7,11 @@
 body {
   font-family: Outfit, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom, #ffffff, #307176);
   color: #333;
 }
 
+/*BOTÃO AGENDA CONSULTA*/
 button {
   font: inherit;
   background-color: #f0f0f0;
@@ -35,6 +36,7 @@ button:active {
               0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
 }
 
+/*INÍCIO NAV BAR*/
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -46,6 +48,7 @@ button:active {
   margin-bottom: 0;
 }
 
+/*LOGO NAV BAR*/
 .logo-area {
   display: flex;
   align-items: center;
@@ -65,18 +68,22 @@ button:active {
   margin: 0;
   margin-right: 10rem;
 }
+/*FIM NAV BAR*/
 
-.slide1 { background-image: url('assets/con1.jpeg'); }
-.slide2 { background-image: url('assets/con2.jpeg'); }
-.slide3 { background-image: url('assets/con3.jpg'); }
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+.bem-estar{
+  margin-left: 14rem;
+  margin-top: 20rem;
+  font-size: 2rem;
+  user-select: none;
 }
-.carousel-image.active { opacity: 1; z-index: 1; }
+
+.img-medico{
+  display: flex;
+  justify-content: flex-end;
+  width: 40rem;
+  height: 40rem;
+  margin-inline: 75rem;
+  margin-top: -25rem;
+}
+
