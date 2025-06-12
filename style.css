@@ -66,60 +66,17 @@ button:active {
   margin-right: 10rem;
 }
 
-.carousel {
-  width: 100%; /* Ocupa toda a largura da tela */
-  height: 800px; /* Mantém a altura fixa */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  overflow: hidden;
-  position: relative;
-  /* Adiciona centralização vertical na página */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0;
-  margin-top: -12rem;
-}
-
+.slide1 { background-image: url('assets/con1.jpeg'); }
+.slide2 { background-image: url('assets/con2.jpeg'); }
+.slide3 { background-image: url('assets/con3.jpg'); }
 .carousel-image {
-  width: 100%; /* Ocupa toda a largura do contêiner */
-  height: 100%; /* Mantém a proporção com a altura do contêiner */
-  object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.carousel-image.active {
-  opacity: 1;
-  z-index: 1;
-}
-/* SETAS ISOLADAS */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #ffffff; /* fundo branco sólido */
-  border-radius: 50%; /* formato circular */
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem; /* seta fina e pequena */
-  font-weight: 100;
-  color: #333333; /* seta escura */
-  cursor: pointer;
-  z-index: 2;
-  box-shadow: none;
-  text-shadow: none;
-  transition: none;
-}
-
-#prev {
-  left: 15px;
-}
-
-#next {
-  right: 15px;
-}
+.carousel-image.active { opacity: 1; z-index: 1; }
