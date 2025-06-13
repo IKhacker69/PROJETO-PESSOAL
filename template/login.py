@@ -20,14 +20,32 @@ def login_page():
                     return redirect('/admin')
                 if usuario['nome'] == nome and usuario['senha'] == senha:
                     return redirect('/home')
-                else:
-                    flash('Usuário ou senha incorretos!')
-                    return redirect('/login')
-    return render_template('login.html')
+            flash('Usuário ou senha incorretos!')
+            return redirect('/login')
 
-@app.route('/admin')
-def admin_page():
-    return render_template('admin.html')
+@app.route('/cadastrarUsuario', methods=['POST'])
+def cadastrarUsuario():
+    user = [ ]
+    nome = request.form.get('nome')
+    senha = request.form.get('senha')
+    user = [
+        {
+            'nome': nome,
+            'senha': senha
+        }
+    ]
+    with open('usuarios.json') as usuariosTemp:
+        usuarios = json.load(usuariosTemp)
+    
+    usuarioNovo = user + usuarios
+
+    with open('usuarios.json' , 'w') as gravarTemp:
+        json.dump(usuarioNovo, gravarTemp, indent=4)
+    flash('Usuário cadastrado com sucesso!')
+
+    return redirect('/login')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
