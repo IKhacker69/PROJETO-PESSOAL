@@ -32,8 +32,9 @@ def login_page():
         if usuario:
             return render_template('home.html')
         else:
-            flash('Usuário ou senha incorretos!')
             return render_template('login.html')
+        flash('Usuário ou senha inválidos!')
+            
 
     return render_template('login.html')
 
