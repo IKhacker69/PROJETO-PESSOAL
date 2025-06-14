@@ -19,22 +19,22 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template('template\login.html')
+    return render_template('login.html')
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
 
-        cursor.execute("SELECT * FROM usuarios WHERE nome = %s AND senha = %s", (nome, senha))
+        cursor.execute("SELECT * FROM login WHERE nome = %s AND senha = %s", (nome, senha))
         usuario = cursor.fetchone()
 
         if nome == 'Admin' and senha == '123456':
             return redirect('/admin')
 
         if usuario:
-            return redirect('/home')
+            return render_template('home.html')
         else:
             flash('Usuário ou senha incorretos!')
-            return redirect('/login')
+            return render_template('login.html')
 
     return render_template('login.html')
 
