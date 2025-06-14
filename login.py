@@ -19,7 +19,6 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template('login.html')
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
