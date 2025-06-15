@@ -33,7 +33,7 @@ def login_page():
             return render_template('home.html')
         else:
             return render_template('login.html')
-        flash('Usuário ou senha inválidos!')
+            flash('Usuário ou senha inválidos!')
             
 
     return render_template('login.html')
