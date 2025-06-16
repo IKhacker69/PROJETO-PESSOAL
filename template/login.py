@@ -1,6 +1,16 @@
 from flask import Flask, render_template, redirect, request, flash
 import mysql.connector
 
+class agendamentos:
+    def __init__(self, nome, categoria, data, hora):
+        self.nome = nome
+        self.categoria = categoria
+        self.data = data
+        self.hora = hora    
+
+
+
+
 # Conexão com o banco de dados
 conexao = mysql.connector.connect(
     host='localhost',
@@ -13,9 +23,13 @@ cursor = conexao.cursor(dictionary=True)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template('home.html')
+    agendamento1 = agendamentos('Médico', 'Consulta', '2023-10-01', '10:00')
+    agendamento2 = agendamentos('Dentista', 'Limpeza', '2023-10-02', '11:00')
+    lista = [agendamento1, agendamento2]
+    return render_template('home.html', lista)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
@@ -30,7 +44,7 @@ def login_page():
             return redirect('/admin')
 
         if usuario:
-            return redirect('/home')
+            return home()
         else:
             flash('Usuário ou senha incorretos!')
             return redirect('/login')
