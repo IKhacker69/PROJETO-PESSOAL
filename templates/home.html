@@ -24,22 +24,19 @@
     </nav>
   </header>
 
+    <div id="background-home">
+      <img src="{{ url_for('static', filename='assets/back-home.jpg') }}" alt="foto-inicio">
+    </div>
+
   <main>
-    <section class="apresentacao-home d-flex align-items-center justify-content-center text-center">
-      <div class="text-white">
+
+    <section class="fala-apre">
         <h2><b>Seu bem-estar,<br />começa aqui!</b></h2>
         <h3>Agende consultas com especialistas de forma rápida, segura e no seu tempo!</h3>
         <button class="btn btn-light mt-3">Agende aqui</button>
       </div>
     </section>
 
-    <section class="backgroundhome">
-      <div class="imgback"></div>
-    </section>
-
-    <section class="servicos">
-      <img src="{{ url_for('static', filename='assets/background-serv.jpg') }}" alt="servicos" />
-    </section>
   </main>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>

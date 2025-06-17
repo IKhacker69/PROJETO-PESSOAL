@@ -44,11 +44,11 @@ button:active {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 2rem;
-  background-color: white;
   user-select: none;
   margin-bottom: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  position: absolute;
+  font-size: 1.5em;
 }
 
 /*LOGO NAV BAR*/
@@ -74,26 +74,6 @@ button:active {
 }
 /*FIM NAV BAR*/
 
-.backgroundhome {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.imgback {
-  position: 20px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Coloca a imagem atrás do conteúdo */
-}
-
-.imgback img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta a imagem sem distorcer */
-}
-
 .consulta-estar{
   display: flex;
   margin-right: 50rem;
@@ -112,10 +92,12 @@ button:active {
   margin-top: -45rem;
 }
 
-.apresentacao-home {
-  background-image: url('assets/Background2.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh; /* ou ajuste como quiser */
-  position: relative;
+#background-home{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#background-home img{
+  width: 100%;
 }
