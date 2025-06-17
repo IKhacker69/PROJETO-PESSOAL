@@ -23,12 +23,12 @@ cursor = conexao.cursor(dictionary=True)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
-@app.route('/')
+@app.route('/home')
 def home():
     agendamento1 = agendamentos('Médico', 'Consulta', '2023-10-01', '10:00')
     agendamento2 = agendamentos('Dentista', 'Limpeza', '2023-10-02', '11:00')
     lista = [agendamento1, agendamento2]
-    return render_template('home.html', lista)
+    return render_template('home.html', lista=lista)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -44,7 +44,9 @@ def login_page():
             return redirect('/admin')
 
         if usuario:
-            return render_template('home.html')
+            flash('Login realizado com sucesso!')
+            return redirect('/home')
+        
         else:
             return render_template('login.html')
             flash('Usuário ou senha inválidos!')

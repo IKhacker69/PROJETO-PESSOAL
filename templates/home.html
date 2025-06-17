@@ -20,6 +20,11 @@
           <li>Valores</li>
           <li>Sobre nós</li>
       </ul>
+      {% for agendamento in agendamentos%}
+          <tr>
+            <td> {{agendamento.nome}}</td>
+          </tr>
+          {% endfor %}
     </nav>
   </header>
   <div>
