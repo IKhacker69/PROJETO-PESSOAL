@@ -1,0 +1,266 @@
+  /* === Estilo Global === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0f0f0f;
+    background-image: radial-gradient(#ffffff0d 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveBg 30s linear infinite;
+    color: white;
+    font-family: 'Noto Sans Khudawadi', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    user-select: none;
+  }
+
+
+  /* === Navegação / Header === */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    height: 60px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    letter-spacing: 3px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    transform: translateY(-4px);
+    color: #a278ee;
+  }
+
+  /* === Currículo === */
+  #curriculo {
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.75em 1em;
+  padding-right: 1.25em;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-radius: 2em;
+  font-size: 1rem;
+  box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+  transition: transform 0.3s;
+  background: linear-gradient( 90deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%
+  );
+}
+
+
+
+  #curriculo:hover {
+    transform: translateY(-4px);
+  }
+
+
+  /* === Apresentação === */
+  #ola {
+    font-size: 18px;
+    margin-left: 150px;
+    margin-top: 100px;
+    user-select: none;
+  }
+
+  #myname {
+    font-size: 70px;
+    margin-left: 150px;
+    margin-top: 10px;
+    user-select: none;
+  }
+
+  #apresentacao{
+    justify-content: center;
+    margin-right: auto;
+    margin-top: 20rem;
+  }
+
+
+  /* === Foto === */
+  #minhafoto {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 4rem;
+    margin-bottom: 2rem;
+    margin-top: -25rem;
+
+  }
+
+  #minhafoto img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* === Redes Sociais === */
+  #redes {
+    display: flex;
+    gap: 28px;
+    justify-content: flex-start;
+    margin-bottom: 5rem;
+    margin-top: -22rem;
+    margin-left: 17.5rem;
+    
+  }
+
+  #redes img {
+    width: 50px;
+    height: 48px;
+    transition: transform 0.3s ease;
+  }
+
+  #redes img:hover {
+    transform: translateY(-4px);
+  }
+
+
+  /* === Background Canvas === */
+  #bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  .card {
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 20px;
+}
+
+/* Estilo comum para os botões */
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(65, 29, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  border-radius: 30px;
+}
+
+/* Instagram */
+.containerOne:hover {
+  background-color: #d62976;
+  transform: scale(1.2);
+}
+
+/* Linkedin */
+.containerThree:hover {
+  background-color: #0072b1;
+  transform: scale(1.2);
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  #ola, #myname {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  #myname {
+    font-size: 2.5rem;
+  }
+
+  #minhafoto img {
+    max-width: 90%;
+  }
+
+  #redes {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+  transition: transform 0.3s ease;
+}
+
+.scroll-arrow svg {
+  transition: transform 0.3s ease;
+  fill: #fff;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
