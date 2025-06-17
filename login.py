@@ -12,7 +12,7 @@ cursor = conexao.cursor(dictionary=True)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html')
 
@@ -30,7 +30,7 @@ def login_page():
         #     return redirect('/admin')
 
         if usuario:
-            return redirect('/home')
+            return render_template('home.html')
         else:
             flash('Usuário ou senha inválidos!')
             return redirect('/login')

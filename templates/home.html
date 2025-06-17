@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vida Leve</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <link rel="stylesheet" href="s">
   <link rel="icon" href="assets/logovl.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,11 @@
           <li>Valores</li>
           <li>Sobre nós</li>
       </ul>
+      {% for agendamento in agendamentos%}
+          <tr>
+            <td> {{agendamento.nome}}</td>
+          </tr>
+          {% endfor %}
     </nav>
   </header>
   <div>
