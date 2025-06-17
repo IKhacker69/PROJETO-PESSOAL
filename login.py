@@ -6,14 +6,10 @@ conexao = pymysql.connect(
     user='root',
     password='',
     database='usuarios'
-<<<<<<< HEAD
+
     )
 
 cursor = conexao.cursor(pymysql.cursors.DictCursor)
-=======
-)
-cursor = conexao.cursor(dictionary=True, buffered=True)
->>>>>>> f7fe22b26f4087268c663fd580ff8d8b53a36e60
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
