@@ -1,17 +1,6 @@
 from flask import Flask, render_template, redirect, request, flash
 import mysql.connector
 
-class agendamentos:
-    def __init__(self, nome, categoria, data, hora):
-        self.nome = nome
-        self.categoria = categoria
-        self.data = data
-        self.hora = hora    
-
-
-
-
-# Conexão com o banco de dados
 conexao = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -25,10 +14,7 @@ app.config['SECRET_KEY'] = 'INACIO'
 
 @app.route('/home')
 def home():
-    agendamento1 = agendamentos('Médico', 'Consulta', '2023-10-01', '10:00')
-    agendamento2 = agendamentos('Dentista', 'Limpeza', '2023-10-02', '11:00')
-    lista = [agendamento1, agendamento2]
-    return render_template('home.html', lista=lista)
+    return render_template('home.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -36,20 +22,18 @@ def login_page():
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
-
-        cursor.execute("SELECT * FROM login WHERE nome = %s AND senha = %s", (nome, senha))
+        cursor.execute('SELECT * FROM login WHERE nome = %s AND senha = %s', (nome, senha))
         usuario = cursor.fetchone()
+        print(usuario)
 
-        if nome == 'Admin' and senha == '123456':
-            return redirect('/admin')
+        # if nome == 'Admin' and senha == '123456':
+        #     return redirect('/admin')
 
         if usuario:
-            flash('Login realizado com sucesso!')
-            return redirect('/home')
-        
+            return render_template('home.html')
         else:
-            return render_template('login.html')
             flash('Usuário ou senha inválidos!')
+            return redirect('/login')
             
 
     return render_template('login.html')
@@ -59,7 +43,7 @@ def cadastrarUsuario():
     nome = request.form.get('nome')
     senha = request.form.get('senha')
 
-    cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (%s, %s)", (nome, senha))
+    cursor.execute('INSERT INTO usuarios (nome, senha) VALUES (%s, %s)', (nome, senha))
     conexao.commit()
 
     flash('Usuário cadastrado com sucesso!')
