@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vida Leve</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="icon" href="assets/logovl.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="icon" href="{{ url_for('static', filename='assets/logovl.png') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poiret+One&display=swap" rel="stylesheet" />
 </head>
 
- <header class="nav-container">
-  <img src="assets/logovl.png" alt="logovl" class="logovl">
+<body>
+  <header class="nav-container">
+    <img src="{{ url_for('static', filename='assets/logovl.png') }}" alt="logovl" class="logovl" />
     <nav>
       <ul class="nav-links">
-          <li>Home</li>
-          <li>Serviços</li>
-          <li>Valores</li>
-          <li>Sobre nós</li>
+        <li>Home</li>
+        <li>Serviços</li>
+        <li>Valores</li>
+        <li>Sobre nós</li>
       </ul>
     </nav>
   </header>
-  <div>
-<div class="apresentacao-home d-flex align-items-center justify-content-center text-center">
-  <div class="text-white">
-    <h2><b>Seu bem-estar,<br>começa aqui!</b></h2>
-    <h3>Agende consultas com especialistas de forma rápida, segura e no seu tempo!</h3>
-    <button class="btn btn-light mt-3">Agende aqui</button>
-  </div>
-</div>
 
-
-  <div class="botao-agendamento">
-  </div>
-
-  <div class="backgroundhome">
-    <div class="imgback">
-      
-    </div>
-  </div>
-</div> 
-  <div>
-    <section class="servicos">
-      <img src="assets/background-serv.jpg" alt="servicos">
+  <main>
+    <section class="apresentacao-home d-flex align-items-center justify-content-center text-center">
+      <div class="text-white">
+        <h2><b>Seu bem-estar,<br />começa aqui!</b></h2>
+        <h3>Agende consultas com especialistas de forma rápida, segura e no seu tempo!</h3>
+        <button class="btn btn-light mt-3">Agende aqui</button>
+      </div>
     </section>
-  <div>
 
+    <section class="backgroundhome">
+      <div class="imgback"></div>
+    </section>
 
-  <script src="script.js"></script>
+    <section class="servicos">
+      <img src="{{ url_for('static', filename='assets/background-serv.jpg') }}" alt="servicos" />
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

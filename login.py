@@ -1,13 +1,14 @@
 from flask import Flask, render_template, redirect, request, flash
-import mysql.connector
+import pymysql
 
-conexao = mysql.connector.connect(
+conexao = pymysql.connect(
     host='localhost',
     user='root',
     password='',
     database='usuarios'
-)
-cursor = conexao.cursor(dictionary=True)
+    )
+
+cursor = conexao.cursor(pymysql.cursors.DictCursor)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
