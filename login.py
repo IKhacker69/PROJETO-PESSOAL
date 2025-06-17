@@ -7,7 +7,7 @@ conexao = mysql.connector.connect(
     password='',
     database='usuarios'
 )
-cursor = conexao.cursor(dictionary=True)
+cursor = conexao.cursor(dictionary=True, buffered=True)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
