@@ -12,9 +12,10 @@ cursor = conexao.cursor(dictionary=True)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
