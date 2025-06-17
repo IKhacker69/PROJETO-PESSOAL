@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     
-{% set menssagem = get_flashed_messages() %}
-{% if menssagem %}
+{% with mensagem = get_flashed_messages() %}
+{% if mensagem %}
     <div class="flash_alert">
-       {{ menssagem[0] }}
+       {{ mensagem[0] }}
     </div>
 {% endif %}
+{% endwith %}
 
 
 <header>
@@ -31,11 +32,6 @@
   <input class="submit" type="submit" value="Log in" />
   <span class="span">Don't have an account? <a href="#">Sign up</a></span>
 </form>
-
-    <div class="flash_alert">
-       {{ menssagem[0] }}
-    </div>
-
 
     
 </body>

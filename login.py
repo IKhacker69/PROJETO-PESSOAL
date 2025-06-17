@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect, request, flash
 import mysql.connector
 
-# Conexão com o banco de dados
 conexao = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -22,18 +21,18 @@ def login_page():
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
-
-        cursor.execute("SELECT * FROM login WHERE nome = %s AND senha = %s", (nome, senha))
+        cursor.execute('SELECT * FROM login WHERE nome = %s AND senha = %s', (nome, senha))
         usuario = cursor.fetchone()
+        print(usuario)
 
-        if nome == 'Admin' and senha == '123456':
-            return redirect('/admin')
+        # if nome == 'Admin' and senha == '123456':
+        #     return redirect('/admin')
 
         if usuario:
-            return render_template('home.html')
+            return redirect('/home')
         else:
-            return render_template('login.html')
             flash('Usuário ou senha inválidos!')
+            return redirect('/login')
             
 
     return render_template('login.html')
@@ -43,7 +42,7 @@ def cadastrarUsuario():
     nome = request.form.get('nome')
     senha = request.form.get('senha')
 
-    cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (%s, %s)", (nome, senha))
+    cursor.execute('INSERT INTO usuarios (nome, senha) VALUES (%s, %s)', (nome, senha))
     conexao.commit()
 
     flash('Usuário cadastrado com sucesso!')
