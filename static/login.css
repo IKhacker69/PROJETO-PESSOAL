@@ -24,6 +24,7 @@
   border-radius: 8px;
   font-family: Outfit, sans-serif;
   user-select: none;
+  color: #000000;
 }
 
 form.form-control {
@@ -54,7 +55,7 @@ form.form-control {
   padding-left: 10px;
 }
 .input:focus {
-  border: 1.5px solid #22b1a2;
+  border: 1.5px solid #187df0;
 }
 .input-field .label {
   position: absolute;
@@ -70,7 +71,7 @@ form.form-control {
   top: 5px;
   left: 5px;
   font-size: 12px;
-  color: #1c9288;
+  color: #0e74e7;
   background-color: #ffffff;
   padding-left: 5px;
   padding-right: 5px;
@@ -85,23 +86,27 @@ form.form-control {
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
-  background: linear-gradient(180deg, #22b1a2 0%, #1fa093 50%, #1b8a7f 100%);
+  background: linear-gradient(180deg, #0060CE 0%, #0060CE 50%, #0060CE 100%);
   box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #22b1a2;
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #187df0;
 }
 
 
 #fala-login{
   font-family: Outfit, sans-serif;
   font-size: 1.8em;
-  margin-left: 30em;
-  margin-top: 2em;
-  color: #2ea398;
+  margin-left: 35.7em;
+  margin-top: 5em;
+  color: #000000;
   justify-content: center;
   display: flex;
+}
+
+#color-login{
+  color: #187df0;
 }
