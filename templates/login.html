@@ -19,21 +19,33 @@
 
 <body>
 
-<form class="form" method="post" action="/login">
-  <span class="input-span">
-    <label for="nome" class="label">nome</label>
-    <input type="text" name="nome" id="nome"
-  /></span>
-  <span class="input-span">
-    <label for="senha" class="label">senha</label>
-    <input type="password" name="senha" id="senha"
-  /></span>
-  <span class="span"><a href="#">Forgot password?</a></span>
-  <input class="submit" type="submit" value="Log in" />
-  <span class="span">Don't have an account? <a href="#">Sign up</a></span>
+    <div id="login-template">
+      <img src="{{ url_for('static', filename='assets/login.png') }}" alt="foto-inicio">
+    </div>
+
+    <div id="fala-login">
+      <h2>Faça seu login para continuar!</h2>
+    </div>
+
+<form class="form-control" action="">
+  <p class="title">Login</p>
+
+  <div class="input-field">
+    <input required class="input" type="text" />
+    <label class="label" for="input">Seu Email</label>
+  </div>
+
+  <div class="input-field">
+    <input required class="input" type="password" />
+    <label class="label" for="input">Sua senha</label>
+  </div>
+
+  <a href="#">Esqueci minha senha</a>
+  <button class="submit-btn">Entrar</button>
 </form>
 
-    
+
+
 </body>
 
 </html>

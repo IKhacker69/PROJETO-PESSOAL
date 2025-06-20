@@ -1,185 +1,107 @@
-/* From Uiverse.io by Praashoo7 */ 
-.form {
+#login-template {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* altura da tela */
+  overflow: hidden; /* evita rolagem */
+  z-index: -1;
+}
+
+#login-template img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+}
+
+
+.form-control {
+  width: 400px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.4em;
-  background-color: #171717;
-  border-radius: 25px;
-  transition: .4s ease-in-out;
+  padding: 25px;
+  border-radius: 8px;
+  font-family: Outfit, sans-serif;
+  user-select: none;
 }
 
-.form:hover {
-  transform: scale(1.05);
-  border: 1px solid black;
+form.form-control {
+  position: absolute;
+  top: 48%;
+  left: 72%;
+  transform: translate(-50%, -50%);
 }
 
-#heading {
-  text-align: center;
-  margin: 2em;
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-}
-
-.field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  border-radius: 25px;
-  padding: 0.6em;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-}
-
-.input-icon {
-  height: 1.3em;
-  width: 1.3em;
-  fill: white;
+.title {
+  font-size: 28px;
+  font-weight: 800;
 }
 
 .input-field {
-  background: none;
-  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  margin-top: 15px;
+  width: 100%;
   outline: none;
-  width: 100%;
-  color: #d3d3d3;
+  border-radius: 8px;
+  height: 45px;
+  border: 1.5px solid #ecedec;
+  background: transparent;
+  padding-left: 10px;
 }
-
-.form .btn {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 2.5em;
+.input:focus {
+  border: 1.5px solid #22b1a2;
 }
-
-.button1 {
-  padding: 0.5em;
-  padding-left: 1.1em;
-  padding-right: 1.1em;
-  border-radius: 5px;
-  margin-right: 0.5em;
-  border: none;
+.input-field .label {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.input-field .input:focus ~ .label,
+.input-field .input:valid ~ .label {
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  color: #1c9288;
+  background-color: #ffffff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.submit-btn {
+  margin-top: 30px;
+  height: 55px;
+  background: #f2f2f2;
+  border-radius: 11px;
+  border: 0;
   outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-
-.button1:hover {
-  background-color: black;
-  color: white;
-}
-
-.button2 {
-  padding: 0.5em;
-  padding-left: 2.3em;
-  padding-right: 2.3em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-
-.button2:hover {
-  background-color: black;
-  color: white;
-}
-
-.button3 {
-  margin-bottom: 3em;
-  padding: 0.5em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-
-.button3:hover {
-  background-color: red;
-  color: white;
-}
-
-/* From Uiverse.io by bociKond */ 
-.form {
-  --bg-light: #efefef;
-  --bg-dark: #707070;
-  --clr: #58bc82;
-  --clr-alpha: #9c9c9c60;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 300px;
-}
-
-.form .input-span {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form input[type="email"],
-.form input[type="password"] {
-  border-radius: 0.5rem;
-  padding: 1rem 0.75rem;
-  width: 100%;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--clr-alpha);
-  outline: 2px solid var(--bg-dark);
-}
-
-.form input[type="email"]:focus,
-.form input[type="password"]:focus {
-  outline: 2px solid var(--clr);
-}
-
-.label {
-  align-self: flex-start;
-  color: var(--clr);
-  font-weight: 600;
-}
-
-.form .submit {
-  padding: 1rem 0.75rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 3rem;
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
-  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #22b1a2 0%, #187e74 50%, #13645c 100%);
+  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   cursor: pointer;
-  transition: all 300ms;
-  font-weight: 600;
-  font-size: 0.9rem;
 }
 
-.form .submit:hover {
-  background-color: var(--clr);
-  color: var(--bg-dark);
+.submit-btn:hover {
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #22b1a2;
 }
 
-.span {
-  text-decoration: none;
-  color: var(--bg-dark);
-}
 
-.span a {
-  color: var(--clr);
+#fala-login{
+  font-family: Outfit, sans-serif;
+  font-size: 1.8em;
+  margin-left: 30em;
+  margin-top: 2em;
+  color: #2ea398;
+  justify-content: center;
+  display: flex;
 }
