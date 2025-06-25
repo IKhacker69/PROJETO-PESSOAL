@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import pymysql
 
 conexao = pymysql.connect(
@@ -14,17 +14,6 @@ app.config['SECRET_KEY'] = 'INACIO'
 
 cursor = conexao.cursor(pymysql.cursors.DictCursor)
 
-# class agendamentos:
-#     def __init__(self, nome, categoria, data, hora):
-#         self.nome = nome
-#         self.categoria = categoria
-#         self.data = data
-#         self.hora = hora
-
-# agendamento1 = agendamentos('João', 'Consulta', '2023-10-01', '10:00')
-# agendamento2 = agendamentos('Maria', 'Exame', '2023-10-02', '11:00')
-# lista = [agendamento1, agendamento2]   
-
 
 def get_agendamentos():
     cursor.execute('SELECT * FROM agendamentos')
@@ -38,7 +27,7 @@ def teste():
 
 
 
-@app.route('/novo', methods=['GET', 'POST'])
+@app.route('/novo', methods=['get','POST'])
 def novo():
     if request.method == 'POST':
         nome = request.form.get('nome')
@@ -50,7 +39,7 @@ def novo():
             (nome, categoria, data, hora)
         )
         conexao.commit()
-    return redirect('/agendamentos')
+    return render_template ('novo.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
