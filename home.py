@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import pymysql
 
 conexao = pymysql.connect(
     host='localhost',
     user='root',
     password='',
-    database='usuarios'
+    database='usuarios' 
 
     )
 
@@ -41,5 +41,8 @@ def novo():
         conexao.commit()
     return render_template ('novo.html')
 
+
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
