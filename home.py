@@ -79,8 +79,6 @@ def login_page():
 
 @app.route('/cadastrar', methods=['POST', 'GET'])
 def cadastrarUsuario():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/login')
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
