@@ -14,6 +14,7 @@ cursor = conexao.cursor(pymysql.cursors.DictCursor)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
+cursor = conexao.cursor(pymysql.cursors.DictCursor)
 @app.route('/home')
 def home():
     return render_template('home.html')
