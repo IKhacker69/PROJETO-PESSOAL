@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import pymysql
 
 conexao = pymysql.connect(
@@ -50,8 +50,8 @@ def novo():
             (nome, categoria, data, hora)
         )
         conexao.commit()
-    agendamentos = get_agendamentos()
-    return render_template('novo.html', agendamentos=agendamentos)
+        agendamentos = get_agendamentos()
+    return redirect('/agendamentos')
 
 if __name__ == '__main__':
     app.run(debug=True)
