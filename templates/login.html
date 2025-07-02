@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     
-{% with mensagem = get_flashed_messages() %}
-{% if mensagem %}
-    <div class="flash_alert">
-       {{ mensagem[0] }}
-    </div>
-{% endif %}
-{% endwith %}
-
 
 <header>
     <title>login</title>
@@ -27,18 +19,27 @@
       <h2>Faça seu login para continuar!</h2>
     </div>
 
-<form class="form-control" action="">
+<form class="form-control" action="" method="post">
   <p class="title">Login</p>
 
   <div class="input-field">
-    <input required class="input" type="text" />
-    <label class="label" for="input">Email</label>
+    <input required class="input" type="text" name="nome"/>
+    <label class="label" for="input">nome</label>
   </div>
 
   <div class="input-field">
-    <input required class="input" type="password" />
+    <input required class="input" type="password" name="senha" />
     <label class="label" for="input">Senha</label>
   </div>
+
+  {% with mensagem = get_flashed_messages() %}
+{% if mensagem %}
+    <div class="flash_alert">
+       {{ mensagem[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+
 
   <a href="#">Esqueci minha senha</a>
   <button class="submit-btn">Entrar</button>

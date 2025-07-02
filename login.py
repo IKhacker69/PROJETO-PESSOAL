@@ -13,6 +13,7 @@ cursor = conexao.cursor(pymysql.cursors.DictCursor)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'INACIO'
 
+cursor = conexao.cursor(pymysql.cursors.DictCursor)
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -38,16 +39,18 @@ def login_page():
 
     return render_template('login.html')
 
-@app.route('/cadastrarUsuario', methods=['POST'])
+@app.route('/cadastrar', methods=['POST', 'GET'])
 def cadastrarUsuario():
-    nome = request.form.get('nome')
-    senha = request.form.get('senha')
-
-    cursor.execute('INSERT INTO usuarios (nome, senha) VALUES (%s, %s)', (nome, senha))
-    conexao.commit()
-
-    flash('Usuário cadastrado com sucesso!')
-    return redirect('/login')
+    if request.method == 'POST':
+        nome = request.form.get('nome')
+        senha = request.form.get('senha')
+        cursor.execute('INSERT INTO login  (nome, senha) VALUES (%s, %s)', (nome, senha))
+        conexao.commit()
+        flash('Usuário cadastrado com sucesso!')
+        return redirect('/login')
+    else:
+        flash('Preencha os campos para cadastrar um novo usuário.')
+    return render_template('cadastro.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
