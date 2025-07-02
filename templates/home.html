@@ -13,44 +13,34 @@
 
 <body>
   <header class="nav-container">
-    <img src="{{ url_for('static', filename='assets/logovl.png') }}" alt="logovl" class="logovl" />
+    <img src="{{ url_for('static', filename='assets/new-logo.png') }}" alt="logovl" class="logovl" />
     <nav>
       <ul class="nav-links">
-        <li>Home</li>
-        <li>Serviços</li>
-        <li>Valores</li>
-        <li>Sobre nós</li>
+        <li> <a href="#inicio">Início</a> </li>
+        <li> <a href="#servicos">Serviços</a> </li>
+        <li> <a href="#valores">Valores</a> </li>
+        <li> <a href="#sobre-nos">Sobre nós</a></li>
       </ul>
     </nav>
   </header>
 
-    <div id="background-home">
-      <img src="{{ url_for('static', filename='assets/back-home.jpg') }}" alt="foto-inicio">
-    </div>
+<div class="img-inicio">
+  <img src="{{ url_for('static', filename='assets/back-home.jpg') }}" alt="">
 
-  <main>
+  <div class="ass-medica">
+    <h2>Assistência Médica</h2>
+    <p>O jeito moderno de marcar consultas. Com a ClinAgende 
+      <br> você agenda seus atendimentos médicos em poucos cliques 
+      <br> sem filas, sem complicação — direto do seu celular ou computador.</p>
+  </div>
 
-    <div class="fala-apre">
-         
-        <div id="first-stanza"> 
-            <h2>
-              Cuidar da sua saúde <br> nunca foi tão fácil!
-            </h2>
-        </div>
+  <button>
+    <span>Agendar</span>
+  </button>
 
-        <div id="second-stanza">
-          <h3>
-            Pronto para cuidar da sua saúde? Clique no botão e agende!
-          </h3>
-        </div>
+</div>
 
-        <div id="button-consult">
-          <button class="btn btn-light mt-3">Agendar agora</button>
-        </div>
 
-    </div>
-
-  </main>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
