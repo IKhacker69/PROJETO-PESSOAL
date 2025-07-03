@@ -1,20 +1,21 @@
-#login-template {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* altura da tela */
-  overflow: hidden; /* evita rolagem */
-  z-index: -1;
+body{
+  font-family: Outfit, sans-serif;
 }
 
-#login-template img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+#fala-login{
+  font-family: Outfit, sans-serif;
+  font-size: 1.8em;
+  margin-top: 5em;
+  color: #000000;
+  justify-content: center;
+  display: flex;
 }
 
-
+/* From Uiverse.io by VitorBaraoDias */ 
 .form-control {
+  margin: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   width: 400px;
   display: flex;
   justify-content: center;
@@ -22,23 +23,13 @@
   gap: 10px;
   padding: 25px;
   border-radius: 8px;
-  font-family: Outfit, sans-serif;
-  user-select: none;
-  color: #000000;
-}
-
-form.form-control {
   position: absolute;
-  top: 48%;
-  left: 72%;
-  transform: translate(-50%, -50%);
+  margin-left: 38%;
 }
-
 .title {
   font-size: 28px;
   font-weight: 800;
 }
-
 .input-field {
   position: relative;
   width: 100%;
@@ -55,7 +46,7 @@ form.form-control {
   padding-left: 10px;
 }
 .input:focus {
-  border: 1.5px solid #187df0;
+  border: 1.5px solid #2d79f3;
 }
 .input-field .label {
   position: absolute;
@@ -71,7 +62,7 @@ form.form-control {
   top: 5px;
   left: 5px;
   font-size: 12px;
-  color: #0e74e7;
+  color: #2d79f3;
   background-color: #ffffff;
   padding-left: 5px;
   padding-right: 5px;
@@ -86,27 +77,14 @@ form.form-control {
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
-  background: linear-gradient(180deg, #0060CE 0%, #0060CE 50%, #0060CE 100%);
+  background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
   box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #187df0;
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
 }
 
 
-#fala-login{
-  font-family: Outfit, sans-serif;
-  font-size: 1.8em;
-  margin-left: 35.7em;
-  margin-top: 5em;
-  color: #000000;
-  justify-content: center;
-  display: flex;
-}
-
-#color-login{
-  color: #187df0;
-}

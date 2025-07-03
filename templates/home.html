@@ -13,7 +13,7 @@
 
 <body>
   <header class="nav-container">
-    <img src="{{ url_for('static', filename='assets/new-logo.png') }}" alt="logovl" class="logovl" />
+    <a href="#inicio"> <img src="{{ url_for('static', filename='assets/new-logo.png') }}" alt="logovl" class="logovl" /> </a>
     <nav>
       <ul class="nav-links">
         <li> <a href="#inicio">Início</a> </li>
@@ -26,19 +26,17 @@
 
 <div class="img-inicio">
   <img src="{{ url_for('static', filename='assets/back-home.jpg') }}" alt="">
-
   <div class="ass-medica">
     <h2>Assistência Médica</h2>
     <p>O jeito moderno de marcar consultas. Com a ClinAgende 
       <br> você agenda seus atendimentos médicos em poucos cliques 
-      <br> sem filas, sem complicação — direto do seu celular ou computador.</p>
+      <br> sem filas, sem complicação — <span class="direto-pc"> direto do seu celular ou computador</span>.</p>
   </div>
-
   <button>
     <span>Agendar</span>
   </button>
-
 </div>
+
 
 
 

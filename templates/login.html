@@ -11,39 +11,24 @@
 
 <body>
 
-    <div id="login-template">
-      <img src="{{ url_for('static', filename='assets/login3.png') }}" alt="foto-inicio">
-    </div>
-
     <div id="fala-login">
-      <h2>Faça seu login para continuar!</h2>
+      <h2>Seja Bem-Vindo!</h2>
     </div>
 
-<form class="form-control" action="" method="post">
+<form class="form-control" action="">
   <p class="title">Login</p>
-
   <div class="input-field">
-    <input required class="input" type="text" name="nome"/>
-    <label class="label" for="input">nome</label>
+    <input required="" class="input" type="text" />
+    <label class="label" for="input">Enter Email</label>
   </div>
-
   <div class="input-field">
-    <input required class="input" type="password" name="senha" />
-    <label class="label" for="input">Senha</label>
+    <input required="" class="input" type="password" />
+    <label class="label" for="input">Enter Password</label>
   </div>
-
-  {% with mensagem = get_flashed_messages() %}
-{% if mensagem %}
-    <div class="flash_alert">
-       {{ mensagem[0] }}
-    </div>
-{% endif %}
-{% endwith %}
-
-
-  <a href="#">Esqueci minha senha</a>
-  <button class="submit-btn">Entrar</button>
+  <a>Forgot your password?</a>
+  <button class="submit-btn">Sign In</button>
 </form>
+
 
 
 
