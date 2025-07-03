@@ -6,7 +6,6 @@ conexao = pymysql.connect(
     user='root',
     password='',
     database='usuarios'
-
     )
 
 cursor = conexao.cursor(pymysql.cursors.DictCursor)
