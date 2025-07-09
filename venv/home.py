@@ -26,7 +26,7 @@ def get_agendamentos():
 @app.route('/agendamentos')
 def teste():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/login')
+        return redirect (url_for('login_page'))
     agendamentos = get_agendamentos()
     return render_template('agendamentos.html', agendamentos=agendamentos)
 
@@ -35,7 +35,7 @@ def teste():
 @app.route('/novo', methods=['get','POST'])
 def novo():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/login')
+        return redirect (url_for('login_page'))
     if request.method == 'POST':
         nome = request.form.get('nome')
         categoria = request.form.get('categoria')
@@ -49,10 +49,32 @@ def novo():
     return render_template ('novo.html')
 
 
+
+@app.route('/editar', methods=['get','POST'])
+def novo():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect (url_for('login_page'))
+    if request.method == 'POST':
+        nome = request.form.get('nome')
+        categoria = request.form.get('categoria')
+        data = request.form.get('data')
+        hora = request.form.get('hora')
+        cursor.execute(
+            'INSERT INTO agendamentos (nome, categoria, data, hora) VALUES (%s, %s, %s, %s)',
+            (nome, categoria, data, hora)
+        )
+        conexao.commit()
+    return render_template ('editar.html')
+
+@app.route('/atualizar', methods=['POST', 'GET'])
+def atualizar():
+    pass 
+
+
 @app.route('/home')
 def home():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/login')
+        return redirect (url_for('login_page'))
     return render_template('home.html')
 
 
