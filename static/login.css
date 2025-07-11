@@ -1,35 +1,61 @@
-body{
-  font-family: Outfit, sans-serif;
-}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  background:
+    /* Ondas e manchas suaves com a cor principal e tons relacionados */
+    radial-gradient(circle at 10% 20%, rgba(0, 202, 219, 0.4) 0%, transparent 60%), /* Onda superior esquerda - mais suave */
+    radial-gradient(circle at 90% 80%, rgba(0, 163, 184, 0.5) 0%, transparent 70%), /* Onda inferior direita - um pouco mais escura */
+    radial-gradient(ellipse at 30% 60%, rgba(0, 202, 219, 0.3) 0%, transparent 50%), /* Mancha central inferior - suave */
+    radial-gradient(circle at 70% 30%, rgba(0, 202, 219, 0.6) 0%, transparent 80%), /* Onda superior direita - mais forte */
+    linear-gradient(135deg, #00cadb 0%, #e0f7f9 50%, #ffffff 100%); /* Base linear-gradient */
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; /* Ajusta o tamanho para cobrir toda a área */
 
-#fala-login{
-  font-family: Outfit, sans-serif;
-  font-size: 1.8em;
-  margin-top: 5em;
-  color: #000000;
-  justify-content: center;
+  /* Para criar um movimento sutil das "ondas" */
+  animation: backgroundMovement 30s ease-in-out infinite alternate;
+
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* From Uiverse.io by VitorBaraoDias */ 
+@keyframes backgroundMovement {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 0% 100%, 0% 0%;
+  }
+  50% {
+    background-position: 5% 10%, 95% 90%, 55% 45%, 5% 90%, 5% 5%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 0% 100%, 0% 0%;
+  }
+}
+
+
 .form-control {
   margin: 20px;
   background-color: #ffffff;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  width: 400px;
+  width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 10px;
   padding: 25px;
   border-radius: 8px;
-  position: absolute;
-  margin-left: 38%;
+  position: absolute; /* Mantenha absolute se sua intenção é posicionar o formulário dessa forma */
+  z-index: 1; /* Garante que o formulário fique acima do background */
 }
+
 .title {
   font-size: 28px;
   font-weight: 800;
 }
+
 .input-field {
   position: relative;
   width: 100%;
@@ -45,9 +71,11 @@ body{
   background: transparent;
   padding-left: 10px;
 }
+
 .input:focus {
   border: 1.5px solid #2d79f3;
 }
+
 .input-field .label {
   position: absolute;
   top: 25px;
@@ -86,5 +114,3 @@ body{
 .submit-btn:hover {
   box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
 }
-
-
