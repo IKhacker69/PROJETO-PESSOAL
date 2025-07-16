@@ -152,3 +152,28 @@ button:hover span:after {
   color: #00cadb;
 }
 
+.cards-informacoes{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #eafafd;
+  flex-wrap: wrap;
+}
+
+.cards{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.hour-funcionament{
+  background-color: rgb(56, 175, 175);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}

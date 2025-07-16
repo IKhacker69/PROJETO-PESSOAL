@@ -25,7 +25,7 @@
   </header>
 
 <div class="img-inicio">
-  <img src="{{ url_for('static', filename='assets/back-home.jpg') }}" alt="">
+  <img src="{{ url_for('static', filename='assets/back-home.jpg') }}">
   <div class="ass-medica">
     <h2>Assistência Médica</h2>
     <p>O jeito moderno de marcar consultas. Com a ClinAgende 
@@ -37,9 +37,39 @@
   </button>
 </div>
 
+<section class="cards-informacoes">
+  <div class="hour-funcionament">
+    <h2>Horário <br> Funcionamento</h2>
+    <p>Segunda á Sabado</p>
+    <p>24 horas disponível nossos serviços</p>
+  </div>
 
+  <div class="cards">
+    <h2>Encontre um médico</h2>
+    <p>Escolhao médico que deseja realizar <br> sua consulta.</p>
+    <button>Consultar</button>
+  </div>
 
+  <div class="cards">
+    <h2>Onde estamos?</h2>
+    <p>Confira endereços e veja qual a unidade <br> mais próxima de você.</p>
+    <button>Conferir</button>
+  </div>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <div class="cards">
+    <h2>Serviços disponíveis</h2>
+    <p>Veja quais exames, especialidades e <br> serviços médicos oferecemos.</p>
+    <button>Serviços</button>
+  </div>
+
+  <div class="cards">
+    <h2>Convênios Atendidos</h2>
+    <p>Veja quais convênios são aceitos.</p>
+    <button>Convênios</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
