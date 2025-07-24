@@ -3,10 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Médico</title>
+    <title>ClinAgende-Agendamentos rápidos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
-  
+
+<div class="img-login">
+     <img src="{{ url_for('static', filename='assets/login-med.png') }}">
+</div>
+
+<form class="login-form">
+  <div class="form-heading">Bem Vindo</div>
+  <div class="input-group">
+    <label class="label" for="email">CPF</label>
+    <input
+      required=""
+      placeholder="CPF"
+      name="email"
+      id="email"
+      type="email"
+    />
+  </div>
+  <div class="input-group">
+    <label class="label" for="password">Senha</label>
+    <input
+      required=""
+      placeholder="Senha"
+      name="password"
+      id="password"
+      type="password"
+    />
+  </div>
+  <div class="forgot-password">
+    <a href="#">Esqueceu sua senha?</a>
+  </div>
+  <button class="submit" type="submit">Entrar</button>
+  <div class="signup-link">Não tem uma conta? <a href="#">Crie aqui</a></div>
+</form>
+
 </body>
 </html>
