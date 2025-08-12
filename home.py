@@ -50,21 +50,22 @@ def novo():
 
 
 
-@app.route('/editar', methods=['get','POST'])
-def novo():
+@app.route('/editar', methods=['POST'])
+def editar():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect (url_for('login_page'))
+        return redirect(url_for('login_page'))
     if request.method == 'POST':
+        agendamento_id = request.form.get('id')  # Supondo que o ID venha do formulário
         nome = request.form.get('nome')
         categoria = request.form.get('categoria')
         data = request.form.get('data')
         hora = request.form.get('hora')
         cursor.execute(
-            'INSERT INTO agendamentos (nome, categoria, data, hora) VALUES (%s, %s, %s, %s)',
-            (nome, categoria, data, hora)
+            'UPDATE agendamentos SET nome=%s, categoria=%s, data=%s, hora=%s WHERE id=%s',
+            (nome, categoria, data, hora, agendamento_id)
         )
         conexao.commit()
-    return render_template ('editar.html')
+    return render_template('editar.html')
 
 @app.route('/atualizar', methods=['POST', 'GET'])
 def atualizar():
