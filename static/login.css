@@ -1,0 +1,155 @@
+/* From Uiverse.io by rajesh_4474 */ 
+/* login form by rajesh_4474 */
+@keyframes gradientBackground {
+  0% {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  }
+  50% {
+    background: linear-gradient(45deg, #58bc82, #45a56b);
+  }
+  100% {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  }
+}
+
+.login-form {
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-out;
+  font-family: Outfit, sans-serif;
+  margin-right: 10rem;
+  margin-top: 15rem
+}
+
+.form-heading {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group .label {
+  position: absolute;
+  top: -16px;
+  left: 12px;
+  font-size: 12px;
+  color: #00cadb;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #00cadb;
+  box-shadow: 0 0 10px #00cadb(88, 188, 130, 0.4);
+}
+
+.input-group input:focus + .label {
+  top: -20px;
+  font-size: 11px;
+  color: #00cadb;
+  opacity: 1;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  font-size: 14px;
+  color: #00cadb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #00cadb;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #00cadb;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #00cadb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px #00cadb(88, 188, 130, 0.3);
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.signup-link a {
+  color: #00cadb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #00cadb;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 30px;
+    width: 90%;
+  }
+}
+
+.img-login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
